@@ -1,5 +1,6 @@
 # NapCat 聚合解析插件（napcat-plugin-mediaparse）
 
+**写在前面：最新版本的napcat设置了插件白名单，所有非官方的插件都不让读取。不知道到回退到哪个版本才可以用，我是一直用的旧版v4.15.18。**
 本项目是一个基于 [NapCat](https://github.com/NapNeko/NapCatQQ) 的插件，自动解析群聊中分享的**抖音、小红书、哔哩哔哩、快手、微博**等平台链接，并将无水印视频、图文作品直接发送到聊天中。内置多解析源自动降级，显著提升解析成功率。
 
 > 本项目基于 [Black-Cyan/napcat-plugin-douyin](https://github.com/Black-Cyan/napcat-plugin-douyin) 二次开发，由原来的单一抖音解析扩展为多平台聚合解析。
