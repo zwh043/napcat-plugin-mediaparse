@@ -1,0 +1,32 @@
+name: Bug 反馈
+description: 报告一个解析失败或功能异常
+labels: ["bug"]
+body:
+  - type: input
+    id: version
+    attributes:
+      label: 插件版本
+      description: 请填写当前使用的 napcat-plugin-mediaparse 版本号
+      placeholder: "例如 v2.0.0"
+    validations:
+      required: true
+  - type: dropdown
+    id: platform
+    attributes:
+      label: 出问题的平台
+      options: [抖音, 小红书, 哔哩哔哩, 快手, 微博, 其他]
+    validations:
+      required: true
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: 问题描述
+      description: 发生了什么？贴上后台日志最有帮助。
+      placeholder: 发了某链接后……后台日志显示……
+    validations:
+      required: true
+  - type: input
+    id: link
+    attributes:
+      label: 出问题的分享链接（可选）
+      description: 方便复现，可去掉敏感信息
