@@ -1,0 +1,93 @@
+/** WebUI 前端类型定义 */
+
+export interface PluginStatus {
+    pluginName: string
+    uptime: number
+    uptimeFormatted: string
+    config: PluginConfig
+    stats: {
+        processed: number
+        todayProcessed: number
+        lastUpdateDay: string
+    }
+}
+
+export interface PluginConfig {
+    enabled: boolean
+    debug: boolean
+    douyinAutoParse: boolean
+    douyinForwardNickname: string
+    douyinVideoQuality: 'standard' | 'high'
+    douyinVideoSendMode: 'forward' | 'direct'
+    maxVideoSizeMb: number
+    dedupSeconds: number
+    cacheDays: number
+    cacheClearTime: string
+    apizeroApiKey: string
+    enableApizero: boolean
+    enableXinyew: boolean
+    enableXhus: boolean
+    groupConfigs?: Record<string, GroupConfig>
+}
+
+export interface GroupConfig {
+    enabled?: boolean
+}
+
+export interface GroupInfo {
+    group_id: number
+    group_name: string
+    member_count: number
+    max_member_count: number
+    enabled: boolean
+}
+
+export interface ApiResponse<T = unknown> {
+    code: number
+    data?: T
+    message?: string
+}
+
+export interface CachePreviewEntry {
+    url: string
+    type: 'video' | 'image'
+    author: string
+    desc: string
+    sizeMb: number | null
+    cachedAt: number
+    sourceUrl: string
+}
+
+export interface CachePreviewData {
+    total: number
+    stringPool: number
+    entries: CachePreviewEntry[]
+}
+
+export type ParseErrorType = 'api_request' | 'api_response' | 'download'
+
+export type ParseStage = 'init' | 'requesting' | 'api_ready' | 'cache_hit' | 'downloading' | 'sending' | 'completed'
+
+export type ParseStatus = 'pending' | 'parsing' | 'success' | 'failed'
+
+export interface ParseLogEntry {
+    time: number
+    message: string
+}
+
+export interface ParseRecord {
+    id: string
+    url: string
+    normalizedUrl: string
+    groupId: string
+    status: ParseStatus
+    stage: ParseStage
+    progress: number
+    attempts: number
+    maxAttempts: number
+    message?: string
+    errorType?: ParseErrorType
+    createdAt: number
+    updatedAt: number
+    logs: ParseLogEntry[]
+}

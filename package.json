@@ -1,0 +1,52 @@
+{
+  "name": "napcat-plugin-mediaparse",
+  "plugin": "聚合解析",
+  "version": "2.0.0",
+  "type": "module",
+  "main": "index.mjs",
+  "description": "多平台短视频/图文聚合解析插件：自动解析群聊中的抖音、小红书、哔哩哔哩、快手、微博等分享链接，多解析源自动降级，转发无水印内容到聊天。",
+  "author": "zwh043",
+  "license": "MIT",
+  "keywords": [
+    "napcat",
+    "plugin",
+    "qq",
+    "douyin",
+    "xiaohongshu",
+    "bilibili",
+    "视频",
+    "解析",
+    "多平台",
+    "聚合"
+  ],
+  "napcat": {
+    "tags": [
+      "工具",
+      "娱乐"
+    ],
+    "minVersion": "4.14.0",
+    "homepage": "https://github.com/zwh043/napcat-plugin-mediaparse"
+  },
+  "dependencies": {
+    "napcat-types": "0.0.16"
+  },
+  "devDependencies": {
+    "@rollup/plugin-node-resolve": "^15.3.1",
+    "@types/express": "^5.0.6",
+    "@types/node": "^20.19.33",
+    "napcat-plugin-debug-cli": "^1.2.8",
+    "typescript": "^5.9.3",
+    "vite": "^6.4.1",
+    "ws": "^8.19.0"
+  },
+  "scripts": {
+    "build": "vite build",
+    "build:webui": "cd src/webui && pnpm install && pnpm run build",
+    "dev:webui": "cd src/webui && pnpm run dev",
+    "watch": "vite build --watch",
+    "dev": "vite build --watch",
+    "push": "vite build",
+    "deploy": "vite build",
+    "typecheck": "tsc --noEmit"
+  }
+}
