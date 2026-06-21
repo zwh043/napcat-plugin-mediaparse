@@ -5,7 +5,7 @@
 > 本项目基于 [Black-Cyan/napcat-plugin-douyin](https://github.com/Black-Cyan/napcat-plugin-douyin) 二次开发，由原来的单一抖音解析扩展为多平台聚合解析。
 
 <p align="center">
-  <a href="https://github.com/zwh043/napcat-plugin-mediaparse/releases/tag/v2.0.0">
+  <a href="https://github.com/zwh043/napcat-plugin-mediaparse/releases">
     <img src="https://img.shields.io/github/downloads/zwh043/napcat-plugin-mediaparse/total">
   </a>
 </p>
